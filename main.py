@@ -50,7 +50,7 @@ def main(min_samples_split, n_estimators, max_depth):
     mlflow.log_metric("r2", r2_test)
     
     # Log the model
-    mlflow.sklearn.log_model(model, "model_rf")
+    mlflow.sklearn.log_model(model, "model")
 
 if __name__ == "__main__":
     main()
