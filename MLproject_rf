@@ -2,9 +2,8 @@ conda_env: conda.yml
 
 entry_points:
   main:
-    command: python main.py --min_samples_split {min_samples_split} --n_estimators {n_estimators} --max_depth {max_depth} --name {name}
+    command: python main.py --min_samples_split {min_samples_split} --n_estimators {n_estimators} --max_depth {max_depth} 
     parameters:
       min_samples_split: {type: float, default: 2}
       n_estimators: {type: int, default: 100}
       max_depth: {type: int, default: 3}
-      name: {type: str, default: 'My_rf'}
