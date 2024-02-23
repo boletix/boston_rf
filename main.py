@@ -14,7 +14,7 @@ def eval_metrics(actual, pred):
     return rmse, mae, r2
 
 @click.command()
-@click.option("--learning_rate", default=0.1)
+@click.option("--min_samples_split", default=2)
 @click.option("--n_estimators", default=100)
 @click.option("--max_depth", default=3)
 @click.option("--name", default='My_rf_git')
