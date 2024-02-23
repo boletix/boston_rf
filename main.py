@@ -17,8 +17,7 @@ def eval_metrics(actual, pred):
 @click.option("--min_samples_split", default=2)
 @click.option("--n_estimators", default=100)
 @click.option("--max_depth", default=3)
-@click.option("--name", default='My_rf_git')
-def main(min_samples_split, n_estimators, max_depth, name):
+def main(min_samples_split, n_estimators, max_depth):
     (x_train, y_train), (x_test, y_test) = tf.keras.datasets.boston_housing.load_data(
         path="boston_housing.npz", test_split=0.2, seed=113
     )
@@ -51,7 +50,7 @@ def main(min_samples_split, n_estimators, max_depth, name):
     mlflow.log_metric("r2", r2_test)
     
     # Log the model
-    mlflow.sklearn.log_model(model, name)
+    mlflow.sklearn.log_model(model, "model_rf")
 
 if __name__ == "__main__":
     main()
